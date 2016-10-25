@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<div ng-app="myApp">
+<div ng-controller="mainController">
+<div>
+<ul>
+<li><span ng-click="Indexdata()">List Mahasiswa</span></li>
+<li><span ng-click="show()">Show Mahasiswa</span> <input name="id" placeholder="Id Mahasiswa" ng-model="mahasiswa.id" /></li>
+<li>
+<span ng-click="saveData()">Create Mahasiswa : </span>
+<input name="NRP" placeholder="NRP" ng-model="mahasiswa.NRP" /> &nbsp; <input name="Name" placeholder="Name" ng-model="mahasiswa.Nama"/>&nbsp;
+<input name="Email" placeholder="Email" ng-model="mahasiswa.email" /> 
+</li>
+<li>
+<span ng-click="update()">Update Bycycles</span><input name="id" placeholder="Id Mahasiswa" ng-model="mahasiswa.id" /> <br />
+<input name="NRP" placeholder="NRP" ng-model="mahasiswa.NRP" /> &nbsp; 
+<input name="Name" placeholder="Name" ng-model="mahasiswa.Nama" />&nbsp; 
+<input name="Email" placeholder="Email" ng-model="mahasiswa.email" />
+</li>
+<li><span ng-click="delete()">Delete Bycycle</span> <input name="id" placeholder="Id Mahasiswa" ng-model="mahasiswa.id" /></li>
+</ul>
+</div>
+<div>{{ mahasiswa.Nama}}</div>
+<div>NRP : {{ mahasiswa.NRP }} &nbsp; Email : {{ mahasiswa.email }}</div>
+<table>
+<thead>
+<tr>
+<th width="50px">ID</th>
+<th width="150px">NRP</th>
+<th width="150px">Nama</th>
+<th width="150px">Email</th>
+</tr>
+</thead>
+<tbody style="text-align: center;">
+<tr ng-repeat="data in mahasiswas.data">
+<td>{{ data.id }}</td>
+<td>{{ data.NRP }}</td>
+<td>{{ data.Nama }}</td>
+<td>{{ data.email }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<script src="js/shared/angular.js"></script>
+<script src="js/controllers/mainController.js"></script>
+</body>
+</html>
